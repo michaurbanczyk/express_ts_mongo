@@ -1,5 +1,7 @@
 # DIR
 /node_modules
+.env
+
 .idea
 
-.env
+
