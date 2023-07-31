@@ -1,11 +1,12 @@
 // Required External Modules
 
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import * as dotenv from "dotenv";
+import express from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import * as dotenv from 'dotenv';
 
-import validateEnv from "@/utils/validateEnv";
+import validateEnv from '@/utils/validateEnv';
+import general from '@/routers/routes';
 
 // App Variables
 dotenv.config();
@@ -18,9 +19,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use('/', general);
 
 // Server Activation
 app.listen(port, () => {
