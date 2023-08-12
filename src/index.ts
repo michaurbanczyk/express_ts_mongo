@@ -6,7 +6,6 @@ import helmet from 'helmet';
 import * as dotenv from 'dotenv';
 
 import validateEnv from '@/utils/validateEnv';
-import general from '@/routers/routes';
 import userRoutes from '@routers/users.routes';
 
 // App Variables
@@ -20,8 +19,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use('/', general);
-app.use('/user', userRoutes);
+app.use('/', userRoutes);
 
 // Server Activation
 app.listen(port, () => {
