@@ -1,5 +1,6 @@
 # DIR
 /node_modules
+/mongodb-cluster
 .env
 
 .idea

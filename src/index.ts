@@ -7,6 +7,7 @@ import * as dotenv from 'dotenv';
 
 import validateEnv from '@/utils/validateEnv';
 import general from '@/routers/routes';
+import userRoutes from '@routers/users.routes';
 
 // App Variables
 dotenv.config();
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/', general);
+app.use('/user', userRoutes);
 
 // Server Activation
 app.listen(port, () => {
